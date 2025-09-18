@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Colores pastel y otros recursos:
+https://www.color-hex.com/color-palette/1064581 hiper pasteles
+https://www.color-hex.com/color-palette/1064262 verdes zacate
+https://www.color-hex.com/color-palette/240 colores oscuros
+https://www.color-hex.com/color-palette/58366 colores purpuras oscuros
+https://www.color-hex.com/color-palette/1064648 colores calidos oscuros
+https://www.color-hex.com/color-palette/111023 coral
+https://www.color-hex.com/color-palette/114050 colores pasteles
+https://v2.boxicons.com/
+https://fonts.google.com/
+*/
+
+:root { /* Root quiere decir trabajar con la raiz del documento */
+   --gold1:#F4BD76; /* Declaro variables para los colores que se usarán en el documento */
+   --gold2:#F6CD8F;
+   --gray:#FFFFFF80;
+   --gray2:#F7D9D990;
+   --black1:#1A1E1F;
+   --black2:#30553B;
+   --shadow: 8px 8px 8px; /* x, y, blur */
+   --color_shadow:#00000033;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+/* header */
+
+.container {
+    width: 90%; /* ocupa el 90% del ancho de la pantalla */
+    max-width: 1200px; /* ancho maximo de 1200 pixeles. es decir, será del 90% pero sin revazar los 1200 pixeles */
+    margin: 0 auto; /* no habrá margen, pero será automatico, es decir, ese 90% se centra */
+    overflow: hidden; /* con overflow hidden, si algo sale del contenedor, no se verá */
+    padding: 100px 0;
+    height: auto;
+}
+
+.container--modifier {
+    width: 60%; /* los elementos de html tomarán los atributos de container, pero al tener el modifier se actualizarán y se cambiarán los atributos que pongamos en el modifier */
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e9ffea 0%, #e4dafd 100%); /* background con gradiente de 180 grados, con el primer color con stop al 0%, y el segundo con stop del 100% */
+
+}
+
+.nav__hero {
+    color: #40915d;
+    height: 70px; /* altura definida de 70 pixeles */
+    border-bottom: 1px solid rgb(64, 145, 93);
+}
+
+.nav__container {
+    display: flex; /* display flex para que los elementos se alinien en hilera */
+    align-items: center; /* para que los elementos se alinien al centro horizontalmente */
+    justify-content: space-between; /* para que los elementos que estén dentro de este div haya espacio entre ellos y no estén pegados */
+    height: inherit; /* hereda la altura de nav__hero, que está arriba de el */
+    padding: 0; /* nav__container en el HTML se usa junto con la clase de container, que tiene padding de 100px. aqui se actualiza para que los elementos no tengan padding y se pongan hasta arriba. algo confuso */
+}
+
+.logo__name { /* JoseEmpresa. */
+    font-size: 24px;
+}
+
+.link {
+    display: inline-block;
+    color: inherit; /* heredado de nav__hero(? */
+    text-decoration: none; /* para quitar la linea debajo del texto para links */
+    font-weight: 300; /* fuente mas delgada */
+    padding: 10px; /* espacio que tendrá cada elemento hacia sus lados */
+}
+
+.link--active { /* contacto aparecerá con el golor de la variable declarada como --gold1 y será más ancha la fuente que el resto de <a> */
+    color: var(--gold1);
+    font-weight: 700;
+}
+
+.point { /* todos los span que se pusieron con la clase point, es decir, cada punto que poníamos al final de cada oración o palabra, aparecerá con el color dentro de la clase */
+    color: #74c691;
+}
+
+.hero__main { /* aquí va la imagen y una pagina responsiva para frontend */
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.mockup { /*primera imagen de nyan cat en png */
+    object-fit: cover; /* esto para que no se pixelee tanto la imagen */
+    height: calc(100vh - 70px); /* es el 100% de lo alto que vemos en la pantalla, menos 70 pixeles que mide el nav */
+}
+
+.hero__textos {
+    width: 48%;
+}
+
+.title { /* La mejor experiencia digital. */
+    font-size: 56px;
+    font-weight: 300;
+    color: #ff7d7d;
+}
+
+.title--active {
+    color: var(--gold1);
+    font-weight: 700;
+}
+
+.copy {
+    font-size: 24px;
+    color: #40915d;
+    text-shadow: var(--shadow) var(--color_shadow); /* como está configurada la sombra, junto con el color de la sombra */
+    margin: 15px 0; /* margen de 8 pixeles arriba y abajo, y cero hacia los costados */
+}
+
+.copy__active {
+    font-weight: 700;
+}
+
+.cta {
+    padding: 20px 30px; /* padding de 20 pixeles arriba y abajo, y 30 a los costados */
+    display: inline-block; /* para que no tenga problema de usar el margin del padding */
+    background: linear-gradient(180deg, #f0f0fa 0%, #f0fff0 100%);
+    text-decoration: none;
+    color: #684c6b;
+    font-weight: 700;
+    box-shadow: var(--shadow) var(--color_shadow);
+    border-radius: 6px;
+}
+
+/* services */
+
+.services {
+    background: #fafafa;
+}
+
+.subtitle {
+    font-size: 42px;
+}
+
+.subtitle--modifier {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.copy__section {
+    color: var(--black1);
+    font-size: 22px;
+    line-height: 32px; /* espacio que abarca verticalmente el elemento */
+    margin-bottom: 60px; /* espacio hacia abajo respecto al siguiente elemento */
+}
+
+.copy__section--modifier {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.container-cards {
+    display: flex; /* para que los elementos se pongan horizontalmente */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* en caso de que no tengan espacio disponible horizontalmente, se pasará hacia abajo */
+}
+.card {
+    width: 30%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, #e9ffea 0%, #e4dafd 100%);
+    border-radius: 10px;
+    position: relative;
+    text-align: right; /* para que las imagenes estén pegadas al lado izquierdo */
+    margin-bottom: 60px;
+    box-shadow: 0 0 6px var(--color_shadow);
+}
+
+.card__img {
+    width: 95%;
+    height: 300px; /* ajusta la altura de cada imagen para que no haya una card más alta que otra */
+    object-fit: cover;
+    border-radius: 10px 0 0 10px; /*arriba-izquiera, arriba-derecha, abajo-derecha, abajo-izquierda */
+}
+
+.cards__text {
+    text-align: left;
+    width: 85%;
+    margin: 0 auto; /* cero de margen hacia arriba y abajo, y hacia los lados automatico. hacia los lados se rige según el width de arriba */
+}
+
+.card__list {
+    color: #584454;
+    font-weight: 700;
+    margin: 25px 0 12px;
+    font-size: 18px;
+}
+
+.card__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #291c2d;
+}
+
+.card__copy {
+    color: #332438;
+    margin-bottom: 16px; /*para que haya espacio entre este y el botón */
+}
+
+.card__button {
+    display: block;
+    background: linear-gradient(180deg, #f0f0fa 0%, #f0fff0 100%);
+    text-decoration: none;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 6px;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.card__date {
+    color: #332438;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.container-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+
+.background {
+    width: 68%;
+    height: 290px;
+    border-radius: 10px;
+    position: relative; /* para posicionar los textos de background__title y background__copy dentro del background */
+    margin-bottom: 60px; /* para que se alinee con las card */
+}
+
+.background__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* para que la imagen se adapte al tamaño y no se vea estirada */
+    border-radius: inherit;
+}
+
+.background__text { /* div donde está el background__title y el background__copy */
+    position: absolute; /* para que se posicione en su padre */
+    width: 100%;
+    bottom: 30px; /* lo empujamos para arriba */
+    left: 15px; /* lo empujamos hacia la derecha */
+    color: white;
+}
+
+.background__title {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+/* textimony */
+
+.testimony {
+    background: #fafafa; /* para el contraste entre una seccion y otra */
+}
+
+.testimony-container { /* donde están las tres persons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.testimony__card {
+    width: 30%;
+    height: 500px;
+    background: linear-gradient(180deg, #f5d2d3 0%, #bdd0c4 100%);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.testimony__img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* se hereda del padre, testimony__card creo */
+    object-fit: cover;
+    object-position: center top;
+}
+
+.testimony__copy {
+    position: absolute; /* para que se posicione en su padre, padre es en el div donde está dentro, por ejemplo */
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: linear-gradient(180deg, #f0f0fa 0%, #f0fff0 100%);
+    color: #332438;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow) var(--color_shadow);
+    padding: 15px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.testimony__copy--modifier {
+    background: none;
+    box-shadow: none;
+}
+
+.testimony__logo {
+    font-size: 40px;
+    margin-right: 15px; /* espacio entre el texto y el logo para la derecha, la derecha hay un div con el texto */
+    display: inline-block;
+}
+
+.testimony__name {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.testimony__position {
+    color: #684c6b;
+}
+
+.testimony__text {
+    padding: 40px 0; /* padding arriba, abajo */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mc__div {
+    text-align: center;
+}
+
+.mc__logo {
+    margin-bottom: 20px;
+    height: 50px;
+    width: auto;
+}
+
+.testimony__history {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.testimony__info {
+    width: 70%;
+}
+
+.logo--picture{ /* hago que la imagen mida 40x40 pero que no se distorcione, para ello, es el object fit */
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center top;
+}
+
+/* check */
+
+.check {
+    display: flex;
+    justify-content: space-evenly; /* space evenly para que el primer y ultimo elemento tambien tengan espacio para izquierda y derecha respectivamente. con space between solamente hay espacio entre los elementos */
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.check__item {
+    width: 30%;
+    padding-right: 10px;
+    display: flex;
+    border-right: 2px solid #684c6b; /* una linea al lado derecho de cada elemento (grosor, tipo, color) */
+}
+
+.bx-check { /* para cada palomita del check item */
+    background: linear-gradient(180deg, #f0f0fa 0%, #f0fff0 100%);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.check__number {
+    font-weight: 700;
+}
+.check__copy {
+    font-weight: 300;
+}
+
+.newsletter {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: auto;
+    font-family: inherit;
+    position: relative;
+    border-radius: 6px;
+}
+
+.newsletter--modifier {
+    margin: 0;
+    width: 80%;
+}
+
+.newsletter__input {
+    width: 100%;
+    height: 100%;
+    padding: 22px 10px;
+    outline: none;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid #684c6b;
+}
+
+.newsletter__submit {
+    position: absolute; /* se alinea con el input */
+    right: 8px; /* empujamos el boton 8 pixeles desde la derecha */
+    top: 10%; /* empujamos el boton 10% desde arriba */
+    height: 80%;
+    background: linear-gradient(180deg, #f0f0fa 0%, #f0fff0 100%);
+    color: #291c2d; /* color de la fuente */
+    padding: 0 15px; /* espacio dentro del elemento (arriba, abajo), (izquierda, derecha) */
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer; /* cada que se pasa el cursor por el elemento conesta clase se pondrá la manita */
+}
+
+.footer {
+    background: #fafafa;
+}
+
+.footer__caption {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+
+.title__footer {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.download {
+    width: 50%;
+}
+
+.download__app {
+    display: flex;
+}
+
+.download__item {
+    display: flex;
+    padding: 18px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--black2);
+    width: 42%;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.download__logo {
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.download__title {
+    font-size: 18px;
+}
+
+.footer__copy {
+    width: 100%;
+    color: var(--black2);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.copyright { /* ocupa el 100% de su renglon mandando el politica hacia abajo por que flexwrap del footer copy */
+    width: 100%;
+}
+
+.politica__privacidad {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.politica__privacidad:hover { /* se le pone el hover para que cada que se le pasa el cursor por encima se ejecute esta clase */
+    text-decoration: underline;
+}
+
+.politica__privacidad--margin { /* para que terminos y condiciones esté un poco separado de politica y privacidad, del otro modo están juntos */
+    margin-left: 10px;
+}
+
+.get__email {
+    width: 50%;
+}
+
+.socialmedia {
+    margin-top: 24px;
+    display: flex;
+    color: var(--black2);
+}
+
+.socialmedia__icon {
+    color: var(--black2);
+    font-size: 18px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.socialmedia__legend {
+    margin-right: 30px;
+}
+
+.contact {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    color: #FFFFFF;
+}
+
+.item__contact {
+    width: 25%;
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(180deg, rgb(49, 49, 49) 0%, rgb(71, 71, 71) 100%);
+}
+
+.item__contact--gold {
+    background: linear-gradient(180deg, rgba(255, 227, 67, 0.966) 0%, rgb(250, 229, 107) 100%);
+    color: var(--black1);
+}
+
+.contact__icon {
+    font-size: 14px;
+    color: var(--gold1);
+    line-height: 20px;
+    margin-right: 4px;
+}
+
+.contact__icon--modifier {
+    color: black;
+}
+
+.contact__title {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 900px) { /* cuando la pantalla sea menor a 900px se ejecutará esto */
+    .mockup {
+        width: 600px;
+        height: auto;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .copy {
+        font-size: 22px;
+    }
+
+    .cta {
+        padding: 15px 22px;
+    }
+
+    .container-cards {
+        justify-content: space-evenly;
+    }
+
+    .services .card{ /* las cards dentro de services */
+        width: 45%;
+    }
+
+    .background {
+        width: 52%;
+    }
+
+    .card {
+        width: 42%;
+    }
+
+    .testimony-container {
+        justify-content: space-evenly;
+    }
+
+    .testimony__card {
+        width: 45%;
+    }
+
+    .mc__logo {
+        margin-bottom: 20px;
+        height: 40px;
+        width: auto;
+    }
+
+    .check__item {
+        width: 45%;
+        margin-bottom: 35px;
+    }
+
+    .newsletter {
+        width: 80%;
+    }
+
+    .download {
+        width: 100%;
+    }
+
+    .download__app {
+        justify-content: space-between;
+    }
+
+    .download__item {
+        width: 45%;
+    }
+
+    .get-email {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .socialmedia__icon {
+        font-size: 18px;
+    }
+
+    .socialmedia__legend {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    main .container,
+    footer .container {
+        padding: 60px 0;
+    }
+
+    .nav__container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .nav__hero {
+        height: auto;
+    }
+
+    .logo {
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .links {
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .link {
+        padding: 7px 10px;
+    }
+
+    .hero__main {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .hero__textos {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mockup {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .copy {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .copy__section {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .services .card {
+        width: 80%;
+    }
+
+    .container-bg {
+        justify-content: space-evenly;
+    }
+
+    .card {
+        margin-bottom: 40px;
+        width: 65%;
+    }
+
+    .card__title {
+        font-size: 35px;
+    }
+
+    .card__button {
+        width: 100%;
+    }
+
+    .background {
+        width: 65%;
+        margin-bottom: 40px;
+    }
+
+    .background__copy {
+        display: none;
+    }
+
+    .testimony__card {
+        width: 65%;
+    }
+
+    .testimony__name {
+        font-size: 20px;
+    }
+
+    .container--modifier {
+        width: 80%;
+    }
+
+    .item__contact {
+        width: 100%;
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .mockup {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .services .card {
+        width: 95%;
+    }
+
+    .card {
+        width: 95%;
+    }
+
+    .background {
+        width: 95%;
+    }
+
+    .testimony__card {
+        width: 95%;
+    }
+
+    .testimony__history {
+        font-size: 20px;
+    }
+
+    .contact__icon--modifier {
+        width: 90%;
+    }
+
+    .newsletter {
+        width: 100%;
+    }
+
+    .newsletter--modifier {
+        display: none;
+    }
+
+    .check__item {
+        width: 100%;
+        border: none;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .download__item {
+        width: 50%;
+    }
+
+    .download__title {
+        font-size: 16px;
+    }
+
+    .download__logo {
+        font-size: 30px;
+    }
+}
